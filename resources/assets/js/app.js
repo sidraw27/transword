@@ -7,16 +7,20 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+import Vue from "vue";
+
+Vue.prototype.$http = axios;
+window.Vue = Vue;
 
 /**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
+ * If you need, open it
  */
-
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
-const app = new Vue({
-    el: '#app'
-});
+// import nProgress from "nprogress";
+// import 'nprogress/nprogress.css';
+// window.NProgress = nProgress;
+// NProgress.configure({ parent: 'body' });
+// window.NProgress.start();
+// window.NProgress.done();
+// window.addEventListener('beforeunload', function() {
+//     window.NProgress.start();
+// });
