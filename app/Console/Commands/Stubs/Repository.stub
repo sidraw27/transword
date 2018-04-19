@@ -3,13 +3,17 @@
 namespace DummyNamespace;
 
 use App\Entities\DummyEntity;
+use App\Traits\CacheTrait;
 
 class DummyClass
 {
+    use CacheTrait;
+
     private $entity;
 
     public function __construct(DummyEntity $entity)
     {
         $this->entity = $entity;
+        $this->setPrefix('DummyEntity:');
     }
 }
