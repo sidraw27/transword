@@ -1,0 +1,15 @@
+<?php
+
+namespace DummyNamespace;
+
+use App\Entities\DummyEntity;
+
+class DummyClass
+{
+    private $entity;
+
+    public function __construct(DummyEntity $entity)
+    {
+        $this->entity = $entity;
+    }
+}
