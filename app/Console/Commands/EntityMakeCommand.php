@@ -18,7 +18,7 @@ class EntityMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = 'Create a new repository class';
+    protected $description = 'Create a new entity class';
 
     /**
      * The type of class being generated.
