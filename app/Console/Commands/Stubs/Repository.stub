@@ -11,6 +11,10 @@ class DummyClass
 
     private $entity;
 
+    /**
+     * DummyClass constructor.
+     * @param DummyEntity | \Illuminate\Database\Eloquent\Builder $entity
+     */
     public function __construct(DummyEntity $entity)
     {
         $this->entity = $entity;
