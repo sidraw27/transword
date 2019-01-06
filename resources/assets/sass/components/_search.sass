@@ -1,0 +1,58 @@
+.tl_search-outer
+    background: #F5F5F5
+    padding: 40px 0
+    box-shadow: 0 1px 3px rgba(0,0,0,.1)
+
+
+.tl_search
+    @extend %outer1000
+    @extend %flex-justify-wrap
+    @media screen and (max-width: 1000px)
+        margin-left: 10px
+        margin-right: 10px
+
+.tl_search-box
+    border: 1px solid #eeeeee
+    background: #ffffff
+    padding: 0 15px 0 25px
+    width: 80%
+    @extend %flex-align-center
+
+    .search-icons
+        width: 20px
+        img
+            width: 100%
+
+
+    .search-input
+        width: calc(100% - 90px)
+        input
+            height: 60px
+            padding: 5px 15px
+            width: 100%
+            
+
+    .search-clear
+        @extend %flex-align-center
+        cursor: pointer
+        color: #bdbdbd
+        &:hover
+            color: #828282
+        img
+            width: 15px
+        span
+            padding: 0 10px
+            
+.tl_search-hot
+    width: 80%
+    margin-top: 15px
+    @extend %flex-align-wrap
+    height: 20px
+    overflow: hidden
+    .search-hot_tit 
+        margin-right: 20px
+    a
+        padding: 0 10px
+        color: $cl-blue
+        &:hover
+            color: $cl-blue-hover

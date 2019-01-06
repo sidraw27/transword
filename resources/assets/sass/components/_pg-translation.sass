@@ -1,0 +1,157 @@
+
+//------  要翻譯的內容box --------//
+.tl_container-outer
+    padding: 80px 0
+
+.tl_container
+    @extend %outer1000
+    @extend %flex-wrap-between
+    @media screen and (max-width: 1000px)
+        margin-left: 10px
+        margin-right: 10px
+
+    .tl_main-content
+        width: calc(100% - 340px)
+        @media screen and (max-width: 850px)
+            width: 100%
+        .tl_info-box
+            background: $cl-bg-blue
+            padding: 30px
+            margin-bottom: 40px
+            @extend %flex-center-between
+
+    .tl_sidebar
+        width: 300px
+        @media screen and (max-width: 850px)
+            width: 100%
+
+.tl_info-box
+    .info_keyword
+        font-size: 36px
+        font-weight: bold
+        color: #333333
+
+.info_speak-btn
+    background: #ffffff
+    box-shadow: 0 0 4px rgba(0,0,0,.1)
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    @extend %flex-center
+    cursor: pointer
+    &:hover
+        box-shadow: 0 0 6px rgba(0,0,0,.2)
+    img
+        width: 20px
+
+
+
+//-------  翻譯的內容 --------//
+
+.tl_info-article
+    @extend %border-box
+    margin-bottom: 40px
+
+.tl_info-article
+    .tl_tabnav
+        border-bottom: 1px solid #eeeeee
+        margin-bottom: 40px
+        li
+            color: #828282
+            padding: 0 20px 10px 20px
+            cursor: pointer
+            border-bottom: 4px solid #ffffff
+            &:hover
+                border-bottom: 4px solid $cl-blue
+
+
+        li.active
+            color: $cl-blue
+            border-bottom: 4px solid $cl-blue
+            font-weight: bold
+
+    .tl_base-list
+
+        .tl_list-item
+            @extend %flex-justify-between
+            font-size: 18px
+            margin-bottom: 15px
+
+        .tl_list-item:last-child
+            margin-bottom: 0
+        
+        .prop
+            color: $cl-red
+            width: 50px
+            line-height: 25px
+            height: 25px
+
+        .tl_item-text
+            width: calc(100% - 50px)
+            span
+                &::after
+                    content: '；'
+
+//------ 例句 -------//
+.tl_section-list
+    .tl_list-item
+        @extend %flex-justify-between
+        font-size: 18px
+        margin-bottom: 35px
+        .number
+            width: 25px
+            line-height: 25px
+            height: 25px
+        .tl_item-text
+            width: calc(100% - 25px)
+            p
+                margin-bottom: 5px
+            p:last-child
+                margin-bottom: 0
+            .chiness
+                font-size: 15px
+                color: #4f4f4f
+            b
+                color: $cl-red
+
+    .tl_list-item:last-child
+            margin-bottom: 0
+
+
+//-------- 同義詞 ---------//
+.tl_synonym-list
+    @extend %flex-direction-column
+    .tl_list-item
+        font-size: 18px
+        margin-bottom: 35px
+    .tl_list-item:last-child
+            margin-bottom: 0
+    .item-tit
+        color: $cl-red
+        margin-bottom: 10px
+    .item-wrap
+        li
+            &::after
+                content: '；'
+
+    
+//------- 熱門搜索 -------//
+
+.tl_hot-words
+    @extend %border-box
+    .hot-words_wrap
+        li
+            display: flex
+            font-size: 18px
+            margin-bottom: 20px
+        li:last-child
+            margin-bottom: 0
+        
+        .bumber
+            line-height: 25px
+            height: 25px
+            color: #ababab
+            margin-right: 25px
+        a
+            &:hover
+                text-decoration: underline
