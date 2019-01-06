@@ -13,14 +13,19 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js');
 
-mix.sass('resources/assets/sass/app.scss', 'public/css');
+mix.sass('resources/assets/sass/index.sass', 'public/css')
+    .sass('resources/assets/sass/translation.sass', 'public/css');
 
 mix.version();
 /**
  * npm run watch  proxy localhost to https
  */
 mix.browserSync({
-    proxy: 'localhost',
+    proxy: {
+        target: 'translate.tw:7009',
+    },
     https: true,
-    port: 443
+    port: 443,
+    online: false,
+    browser: []
 });
