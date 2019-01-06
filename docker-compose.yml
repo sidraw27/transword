@@ -1,0 +1,55 @@
+version: '3.1'
+
+services:
+    web:
+        build: 
+            context: ./dockerfiles
+            dockerfile: web.dockerfile
+        restart: always
+        ports: 
+            - 127.0.0.1:7009:80
+        volumes:
+            - ./:/var/www/html
+
+    app:
+        build:
+            context: ./dockerfiles
+            dockerfile: app.dockerfile
+        restart: always
+        volumes:
+            - ./:/var/www/html
+
+    mongo:
+      image: mongo
+      ports:
+        - 127.0.0.1:27017:27017
+
+    memcached:
+        image: memcached:latest
+        ports: 
+            - 127.0.0.1:11211:11211
+
+    redis:
+        image: redis
+        ports:
+            - 127.0.0.1:6379:6379
+
+    elasticsearch:
+        image: elasticsearch:6.4.1
+        environment:
+            - cluster.name=docker-cluster
+            - bootstrap.memory_lock=true
+            - "ES_JAVA_OPTS=-Xms128m -Xmx128m"
+            - "discovery.type=single-node"
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+        ports:
+            - 127.0.0.1:9200:9200
+            - 127.0.0.1:9300:9300
+
+    kibana:
+        image: kibana:6.4.1
+        ports:
+            - 127.0.0.1:5601:5601
