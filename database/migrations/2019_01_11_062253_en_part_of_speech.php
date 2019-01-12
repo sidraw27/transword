@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class EnPartOfSpeech extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +12,12 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::create('en_part_of_speech', function (Blueprint $table) {
+            $table->string('type');
+            $table->string('alias');
+            $table->string('name');
+            // index
+            $table->unique('type');
         });
     }
 
@@ -26,6 +28,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('en_part_of_speech');
     }
 }
