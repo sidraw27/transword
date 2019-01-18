@@ -12,5 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
          $this->call(PartOfSpeechSeeder::class);
+         $this->call(EnVocabularySeeder::class);
+         $this->call(CnVocabularySeeder::class);
     }
 }

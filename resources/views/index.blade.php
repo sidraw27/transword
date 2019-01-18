@@ -619,11 +619,18 @@
                     </li>
                 </ul>
                 <ul class="tl_base-list">
-                    <li class="tl_list-item"><span class="prop">n.</span>
-                        <p class="tl_item-text"><span>微波</span><span>微波爐</span></p>
+                    <li class="tl_list-item">
+                        <span class="prop">n.</span>
+                        <p class="tl_item-text">
+                            <span>微波</span>
+                            <span>微波爐</span>
+                        </p>
                     </li>
-                    <li class="tl_list-item"><span class="prop">vt.</span>
-                        <p class="tl_item-text"><span>用微波爐加熱（或烹飪）</span></p>
+                    <li class="tl_list-item">
+                        <span class="prop">vt.</span>
+                        <p class="tl_item-text">
+                            <span>用微波爐加熱（或烹飪</span>
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -637,7 +644,8 @@
                     <li class="tl_list-item"><span class="number">1.</span>
                         <div class="tl_item-text">
                             <p>
-                                The pie is not very hot. Can you <b>microwave </b>it a bit more?</p>
+                                The pie is not very hot. Can you <b>microwave </b>it a bit more?
+                            </p>
                             <p class="chiness">這個餅不是很熱的，你再用微波爐加熱一會好嗎？</p>
                         </div>
                     </li>

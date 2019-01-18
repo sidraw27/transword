@@ -44,12 +44,16 @@ class PartOfSpeechSeeder extends AbstractSeeder
             ],
         ];
 
+        $entity = \App::make(EnPartOfSpeech::class);
+
         foreach ($enPartOfSpeech as $type => $item) {
-            DB::table('en_part_of_speech')->insert([
+            $data = [
                 'type'  => $type,
                 'alias' => $item['alias'],
                 'name'  => $item['name'],
-            ]);
+            ];
+
+            $entity->create($data);
         }
     }
 }
