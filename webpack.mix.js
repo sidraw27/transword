@@ -22,7 +22,7 @@ mix.version();
  */
 mix.browserSync({
     proxy: {
-        target: 'translate.tw:7009',
+        target: 'tw.translate.cc:7009',
     },
     https: true,
     port: 443,
