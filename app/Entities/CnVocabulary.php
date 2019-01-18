@@ -10,7 +10,5 @@ class CnVocabulary extends Model
     // You should always use soft delete to protect your data
     use SoftDeletes;
 
-    protected $collection = 'cn_vocabularies';
-
     public $timestamps = true;
 }

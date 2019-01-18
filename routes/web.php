@@ -12,5 +12,11 @@
 */
 
 Route::get('/', [
-    'uses' => 'Controller@index'
+    'uses' => 'IndexController@index',
+    'as'   => 'index'
+]);
+
+Route::get('/', [
+    'uses' => 'IndexController@index',
+    'as'   => 'index'
 ]);
