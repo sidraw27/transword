@@ -12,7 +12,7 @@ class CreateCnVocabulariesTable extends Migration
      */
     public function up()
     {
-        Schema::create('cn_vocabularies', function (Blueprint $table) {
+        Schema::create('zh_vocabularies', function (Blueprint $table) {
             $table->increments('id');
 
             $table->string('cn_word');
@@ -24,10 +24,12 @@ class CreateCnVocabulariesTable extends Migration
             $table->timestamps();
             $table->softDeletes();
             // index
-            $table->unique('cn_word');
-            $table->unique('tw_word');
-            $table->unique('hk_word');
-            $table->unique('sg_word');
+            $table->unique([
+                'cn_word',
+                'tw_word',
+                'hk_word',
+                'sg_word',
+            ]);
         });
     }
 

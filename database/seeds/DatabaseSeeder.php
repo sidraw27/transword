@@ -13,6 +13,6 @@ class DatabaseSeeder extends Seeder
     {
          $this->call(PartOfSpeechSeeder::class);
          $this->call(EnVocabularySeeder::class);
-         $this->call(CnVocabularySeeder::class);
+         $this->call(ZhVocabularySeeder::class);
     }
 }

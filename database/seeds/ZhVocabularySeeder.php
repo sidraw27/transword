@@ -1,6 +1,6 @@
 <?php
 
-class CnVocabularySeeder extends AbstractSeeder
+class ZhVocabularySeeder extends AbstractSeeder
 {
     /**
      * Run the database seeds.
@@ -10,7 +10,7 @@ class CnVocabularySeeder extends AbstractSeeder
     public function run()
     {
         /** @var \Illuminate\Database\Eloquent\Builder $entity */
-        $entity = \App::make(\App\Entities\CnVocabulary::class);
+        $entity = \App::make(\App\Entities\ZhVocabulary::class);
 
         $words = [
             [

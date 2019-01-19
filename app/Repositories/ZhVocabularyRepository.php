@@ -2,10 +2,10 @@
 
 namespace App\Repositories;
 
-use App\Entities\CnVocabulary;
+use App\Entities\ZhVocabulary;
 use App\Traits\CacheTrait;
 
-class CnVocabularyRepository
+class ZhVocabularyRepository
 {
     use CacheTrait;
 
@@ -13,9 +13,9 @@ class CnVocabularyRepository
 
     /**
      * CnVocabularyRepository constructor.
-     * @param CnVocabulary | \Illuminate\Database\Eloquent\Builder $entity
+     * @param ZhVocabulary | \Illuminate\Database\Eloquent\Builder $entity
      */
-    public function __construct(CnVocabulary $entity)
+    public function __construct(ZhVocabulary $entity)
     {
         $this->entity = $entity;
         $this->setPrefix('CnVocabulary:');
