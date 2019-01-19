@@ -3,12 +3,9 @@
 namespace App\Repositories;
 
 use App\Entities\EnPartOfSpeech;
-use App\Traits\CacheTrait;
 
-class EnPartOfSpeechRepository
+class EnPartOfSpeechRepository extends AbstractRepository
 {
-    use CacheTrait;
-
     private $entity;
 
     /**

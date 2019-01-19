@@ -17,10 +17,14 @@ class IndexController extends BaseController
         try {
             $lang = LangFactory::getLang($lang);
 
-            $displayName = $lang->getDisplayName();
         } catch (\Exception $e) {
             return response($e->getMessage(), 404);
         }
+
+        $locale  = $lang->getLocaleName();
+        $service = $lang->getService();
+
+        $service->getPageData($word);
 
         return view('translate');
     }

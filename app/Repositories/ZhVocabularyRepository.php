@@ -3,14 +3,9 @@
 namespace App\Repositories;
 
 use App\Entities\ZhVocabulary;
-use App\Traits\CacheTrait;
 
-class ZhVocabularyRepository
+class ZhVocabularyRepository extends AbstractVocabularyRepository
 {
-    use CacheTrait;
-
-    private $entity;
-
     /**
      * CnVocabularyRepository constructor.
      * @param ZhVocabulary | \Illuminate\Database\Eloquent\Builder $entity

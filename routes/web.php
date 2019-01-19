@@ -15,3 +15,8 @@ Route::get('/', [
     'uses' => 'IndexController@index',
     'as'   => 'index'
 ]);
+
+Route::get('{lang}/{word}', [
+    'uses' => 'IndexController@vocabulary',
+    'as'   => 'vocabulary'
+]);

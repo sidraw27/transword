@@ -3,14 +3,9 @@
 namespace App\Repositories;
 
 use App\Entities\EnVocabulary;
-use App\Traits\CacheTrait;
 
-class EnVocabularyRepository
+class EnVocabularyRepository extends AbstractVocabularyRepository
 {
-    use CacheTrait;
-
-    private $entity;
-
     /**
      * EnVocabularyRepository constructor.
      * @param EnVocabulary | \Illuminate\Database\Eloquent\Builder $entity
