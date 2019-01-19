@@ -9,7 +9,7 @@ class IndexController extends BaseController
 {
     public function index()
     {
-        return view('index');
+        return view('translate');
     }
 
     public function vocabulary(string $lang, string $word)
@@ -22,6 +22,6 @@ class IndexController extends BaseController
             return response($e->getMessage(), 404);
         }
 
-        return view('index');
+        return view('translate');
     }
 }
