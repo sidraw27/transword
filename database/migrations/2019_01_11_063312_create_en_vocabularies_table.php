@@ -18,8 +18,8 @@ class CreateEnVocabulariesTable extends Migration
 
             $table->string('word');
             $table->string('part_of_speech');
-            $table->string('kk_phonetic')->null();
-            $table->string('dj_phonetic')->null();
+            $table->string('kk_phonetic')->nullable();
+            $table->string('dj_phonetic')->nullable();
 
             $table->timestamps();
             $table->softDeletes();

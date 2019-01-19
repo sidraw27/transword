@@ -44,7 +44,7 @@ class PartOfSpeechSeeder extends AbstractSeeder
             ],
         ];
 
-        $entity = \App::make(EnPartOfSpeech::class);
+        $entity = \App::make(\App\Entities\EnPartOfSpeech::class);
 
         foreach ($enPartOfSpeech as $type => $item) {
             $data = [

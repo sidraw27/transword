@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class EnPartOfSpeech extends Migration
+class CreateEnPartOfSpeech extends Migration
 {
     /**
      * Run the migrations.
@@ -16,6 +16,8 @@ class EnPartOfSpeech extends Migration
             $table->string('type');
             $table->string('alias');
             $table->string('name');
+
+            $table->timestamps();
             // index
             $table->unique('type');
         });

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCnVocabulariesTable extends Migration
+class CreateZhVocabulariesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,11 +15,11 @@ class CreateCnVocabulariesTable extends Migration
         Schema::create('zh_vocabularies', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('cn_word');
-            $table->string('tw_word');
-            $table->string('hk_word');
-            $table->string('sg_word');
-            $table->string('pinyin');
+            $table->string('tw_word', 50);
+            $table->string('cn_word', 50)->nullable();
+            $table->string('hk_word', 50)->nullable();
+            $table->string('sg_word', 50)->nullable();
+            $table->string('pinyin')->nullable();
 
             $table->timestamps();
             $table->softDeletes();
@@ -29,7 +29,7 @@ class CreateCnVocabulariesTable extends Migration
                 'tw_word',
                 'hk_word',
                 'sg_word',
-            ]);
+            ], 'unique_word');
         });
     }
 
