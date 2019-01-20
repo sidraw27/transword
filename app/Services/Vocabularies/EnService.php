@@ -25,26 +25,29 @@ class EnService extends AbstractVocabularyService
     public function getPageData(string $word, string $locale)
     {
 
-        $enVocabulary = $this->enVocabularyRepo->getByWord($word);
+        $enVocabularies = $this->enVocabularyRepo->getByWord($word);
+        $transVocabularies = [];
         $vocabulary   = [
-            'word' => $enVocabulary->word
+            'word' => $enVocabularies->first()->word
         ];
 
-        try {
-            $zhVocabularies = $this->enVocabularyRepo->getTransVocabularies($enVocabulary->id, 'zh');
-        } catch (\Exception $e) {
-            throw new \Exception($e->getMessage());
-        }
+        foreach ($enVocabularies as $enVocabulary) {
+            if ( ! is_null($enVocabulary->part_of_speech)) {
+                $partOfSpeech = $this->partOfSpeechRepo->getByType($enVocabulary->part_of_speech);
+            }
+            $alias = $partOfSpeech->alias ?? '-';
 
-        if ( ! is_null($enVocabulary->part_of_speech)) {
-            $vocabulary['partOfSpeech'] = $this->partOfSpeechRepo->getByType($enVocabulary->part_of_speech);
-        }
+            try {
+                $zhVocabularies = $this->enVocabularyRepo->getTransVocabularies($enVocabulary->id, 'zh');
 
-        $transVocabularies = [];
-        foreach ($zhVocabularies as $zhVocabulary) {
-            $transVocabularies[] = [
-                'word' => $zhVocabulary['tw_word'] ?? ''
-            ];
+                foreach ($zhVocabularies as $zhVocabulary) {
+                    $transVocabularies[$alias][] = [
+                        'word' => $zhVocabulary['tw_word'] ?? ''
+                    ];
+                }
+            } catch (\Exception $e) {
+                throw new \Exception($e->getMessage());
+            }
         }
 
         return compact('vocabulary', 'transVocabularies');

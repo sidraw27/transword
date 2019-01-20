@@ -30,7 +30,13 @@ class EnVocabularySeeder extends AbstractSeeder
                 'part_of_speech' => 'intransitiveVerb',
                 'kk_phonetic'    => 'swɪŋ',
                 'dj_phonetic'    => 'swɪŋ'
-            ]
+            ],
+            [
+                'word'           => 'sway',
+                'part_of_speech' => 'intransitiveVerb',
+                'kk_phonetic'    => 'swei',
+                'dj_phonetic'    => 'swei'
+            ],
         ];
 
         foreach ($words as $word) {

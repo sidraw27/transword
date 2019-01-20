@@ -6,7 +6,9 @@ abstract class AbstractVocabularyRepository extends AbstractRepository
 {
     public function getByWord(string $word, string $column = 'word')
     {
-        return $this->entity->where($column, $word)->first();
+        return $this->entity
+            ->where($column, $word)
+            ->get();
     }
 
     /**

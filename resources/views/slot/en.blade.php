@@ -20,15 +20,17 @@
         {{--</li>--}}
     </ul>
     <ul class="tl_base-list">
-        <li class="tl_list-item">
-            <span class="prop">
-                {{ $pageData['vocabulary']['partOfSpeech']['alias'] ?? '' }}
-            </span>
-            <p class="tl_item-text">
-                @foreach($pageData['transVocabularies'] as $vocabulary)
-                    <span>{{ $vocabulary['word'] }}</span>
-                @endforeach
-            </p>
-        </li>
+        @foreach($pageData['transVocabularies'] as $partOfSpeech => $vocabularies)
+            <li class="tl_list-item">
+                <span class="prop">
+                    {{ $partOfSpeech }}
+                </span>
+                <p class="tl_item-text">
+                    @foreach($vocabularies as $vocabulary)
+                        <span>{{ $vocabulary['word'] }}</span>
+                    @endforeach
+                </p>
+            </li>
+        @endforeach
     </ul>
 </div>
