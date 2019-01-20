@@ -4,16 +4,16 @@ namespace App\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as Middleware;
 
-class LangDetect extends Middleware
+class LocaleDetect extends Middleware
 {
     public function handle($request, \Closure $next)
     {
         $url = explode('.', parse_url($request->url(), PHP_URL_HOST));
         $subDomain = $url[0];
 
-        $languages = ['en', 'tw'];
+        $locales = ['en', 'tw', 'cn'];
 
-        if (in_array($subDomain, $languages)) {
+        if (in_array($subDomain, $locales)) {
             \App::setLocale($subDomain);
         }
 

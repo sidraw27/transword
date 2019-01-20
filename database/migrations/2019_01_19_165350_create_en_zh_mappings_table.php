@@ -15,10 +15,10 @@ class CreateEnZhMappingsTable extends Migration
         Schema::create('en_zh_mapping', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->unsignedInteger('left_id');
-            $table->unsignedInteger('right_id');
+            $table->unsignedInteger('en_id');
+            $table->unsignedInteger('zh_id');
             // index
-            $table->unique(['left_id', 'right_id']);
+            $table->unique(['en_id', 'zh_id']);
         });
     }
 

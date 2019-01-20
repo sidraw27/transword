@@ -5,7 +5,7 @@ namespace App\Services\Vocabularies;
 use App\Repositories\EnPartOfSpeechRepository;
 use App\Repositories\EnVocabularyRepository;
 
-class EnServices extends AbstractVocabularyService
+class EnService extends AbstractVocabularyService
 {
     private $enVocabularyRepo;
     private $partOfSpeechRepo;
@@ -18,10 +18,11 @@ class EnServices extends AbstractVocabularyService
 
     /**
      * @param string $word
+     * @param string $locale
      * @return array
      * @throws \Exception
      */
-    public function getPageData(string $word)
+    public function getPageData(string $word, string $locale)
     {
 
         $enVocabulary = $this->enVocabularyRepo->getByWord($word);
@@ -30,7 +31,7 @@ class EnServices extends AbstractVocabularyService
         ];
 
         try {
-            $zhVocabularies = $this->enVocabularyRepo->getTransVocabularies($enVocabulary->id);
+            $zhVocabularies = $this->enVocabularyRepo->getTransVocabularies($enVocabulary->id, 'zh');
         } catch (\Exception $e) {
             throw new \Exception($e->getMessage());
         }

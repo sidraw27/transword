@@ -14,12 +14,6 @@ class EnVocabularySeeder extends AbstractSeeder
 
         $words = [
             [
-                'word'           => 'backfill',
-                'part_of_speech' => 'noun',
-                'kk_phonetic'    => 'ˋbæk͵fɪl',
-                'dj_phonetic'    => 'ˋbækfil'
-            ],
-            [
                 'word'           => 'credential',
                 'part_of_speech' => 'noun',
                 'kk_phonetic'    => 'krɪˋdɛnʃəl',

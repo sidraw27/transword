@@ -13,7 +13,7 @@ class LangFactory
      */
     public static function getLang(string $lang): AbstractLang
     {
-        $lang = ucfirst($lang);
+        $lang = ucfirst(strtolower($lang));
 
         try {
             $reflection = new \ReflectionClass("App\Factories\Lang\\{$lang}Lang");

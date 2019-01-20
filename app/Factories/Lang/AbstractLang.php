@@ -6,8 +6,6 @@ use App\Services\Vocabularies\AbstractVocabularyService;
 
 interface AbstractLang
 {
-    public function getLocaleName();
-
     public function getRepository();
 
     public function getService(): AbstractVocabularyService;

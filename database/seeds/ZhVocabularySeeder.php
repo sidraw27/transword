@@ -19,6 +19,13 @@ class ZhVocabularySeeder extends AbstractSeeder
                 'hk_word' => '證書',
                 'sg_word' => '證書',
                 'pinyin'  => 'zhengshu',
+            ],
+            [
+                'cn_word' => '凭据',
+                'tw_word' => '憑據',
+                'hk_word' => '憑據',
+                'sg_word' => '憑據',
+                'pinyin'  => 'pínɡ jù',
             ]
         ];
 

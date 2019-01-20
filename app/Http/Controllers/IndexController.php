@@ -7,6 +7,13 @@ use Illuminate\Routing\Controller as BaseController;
 
 class IndexController extends BaseController
 {
+    private $locale;
+
+    public function __construct()
+    {
+        $this->locale = \App::getLocale();
+    }
+
     public function index()
     {
         return view('translate');
@@ -14,18 +21,19 @@ class IndexController extends BaseController
 
     public function vocabulary(string $lang, string $word)
     {
+        $lang = strtolower($lang);
+
         try {
-            $lang = LangFactory::getLang($lang);
+            $langFactory = LangFactory::getLang($lang);
 
         } catch (\Exception $e) {
             return response($e->getMessage(), 404);
         }
 
-        $locale  = $lang->getLocaleName();
-        $service = $lang->getService();
+        $service = $langFactory->getService();
 
-        $pageData = $service->getPageData($word);
+        $pageData = $service->getPageData($word, $this->locale);
 
-        return view('translate', compact('pageData'));
+        return view('translate', compact('lang', 'pageData'));
     }
 }

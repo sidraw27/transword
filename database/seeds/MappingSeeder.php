@@ -13,13 +13,14 @@ class MappingSeeder extends AbstractSeeder
         $entity = \App::make(\App\Entities\EnZhMapping::class);
 
         $mapping = [
-            2 => 1,
+            [1, 1],
+            [1, 2]
         ];
 
-        foreach ($mapping as $enId => $zhId) {
+        foreach ($mapping as $item) {
             $entity->create([
-                'left_id' => $enId,
-                'right_id' => $zhId
+                'en_id' => $item[0],
+                'zh_id' => $item[1]
             ]);
         }
     }

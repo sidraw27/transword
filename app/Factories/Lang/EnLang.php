@@ -4,15 +4,10 @@ namespace App\Factories\Lang;
 
 use App\Repositories\EnVocabularyRepository;
 use App\Services\Vocabularies\AbstractVocabularyService;
-use App\Services\Vocabularies\EnServices;
+use App\Services\Vocabularies\EnService;
 
 class EnLang implements AbstractLang
 {
-    public function getLocaleName()
-    {
-        return 'EN';
-    }
-
     public function getRepository()
     {
         return \App::make(EnVocabularyRepository::class);
@@ -20,6 +15,6 @@ class EnLang implements AbstractLang
 
     public function getService(): AbstractVocabularyService
     {
-        return \App::make(EnServices::class);
+        return \App::make(EnService::class);
     }
 }

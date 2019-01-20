@@ -4,5 +4,5 @@ namespace App\Services\Vocabularies;
 
 abstract class AbstractVocabularyService
 {
-    abstract public function getPageData(string $word);
+    abstract public function getPageData(string $word, string $locale);
 }

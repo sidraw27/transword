@@ -11,4 +11,16 @@ class ZhVocabulary extends Model
     use SoftDeletes;
 
     public $timestamps = true;
+
+    public function enMapping()
+    {
+        return $this->hasManyThrough(
+            EnVocabulary::class,
+            EnZhMapping::class,
+            'zh_id',
+            'id',
+            'id',
+            'en_id'
+        );
+    }
 }

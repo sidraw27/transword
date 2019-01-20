@@ -17,10 +17,10 @@ class EnVocabulary extends Model
         return $this->hasManyThrough(
             ZhVocabulary::class,
             EnZhMapping::class,
-            'left_id',
+            'en_id',
             'id',
             'id',
-            'right_id'
+            'zh_id'
         );
     }
 }
