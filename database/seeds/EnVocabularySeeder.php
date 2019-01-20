@@ -14,10 +14,22 @@ class EnVocabularySeeder extends AbstractSeeder
 
         $words = [
             [
-                'word'           => 'credential',
+                'word'           => 'swing',
                 'part_of_speech' => 'noun',
-                'kk_phonetic'    => 'krɪˋdɛnʃəl',
-                'dj_phonetic'    => null
+                'kk_phonetic'    => 'swɪŋ',
+                'dj_phonetic'    => 'swɪŋ'
+            ],
+            [
+                'word'           => 'swing',
+                'part_of_speech' => 'transitiveVerb',
+                'kk_phonetic'    => 'swɪŋ',
+                'dj_phonetic'    => 'swɪŋ'
+            ],
+            [
+                'word'           => 'swing',
+                'part_of_speech' => 'intransitiveVerb',
+                'kk_phonetic'    => 'swɪŋ',
+                'dj_phonetic'    => 'swɪŋ'
             ]
         ];
 

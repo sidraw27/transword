@@ -14,18 +14,32 @@ class ZhVocabularySeeder extends AbstractSeeder
 
         $words = [
             [
-                'cn_word' => '证书',
-                'tw_word' => '證書',
-                'hk_word' => '證書',
-                'sg_word' => '證書',
-                'pinyin'  => 'zhengshu',
+                'cn_word' => '摆动',
+                'tw_word' => '擺動',
+                'hk_word' => '擺動',
+                'sg_word' => '擺動',
+                'pinyin'  => 'Bǎidòng',
             ],
             [
-                'cn_word' => '凭据',
-                'tw_word' => '憑據',
-                'hk_word' => '憑據',
-                'sg_word' => '憑據',
-                'pinyin'  => 'pínɡ jù',
+                'cn_word' => '挥舞',
+                'tw_word' => '揮舞',
+                'hk_word' => '揮舞',
+                'sg_word' => '揮舞',
+                'pinyin'  => 'Huīwǔ',
+            ],
+            [
+                'cn_word' => '搖蕩',
+                'tw_word' => '搖蕩',
+                'hk_word' => '搖蕩',
+                'sg_word' => '搖蕩',
+                'pinyin'  => 'Yáodàng',
+            ],
+            [
+                'cn_word' => '轻松地走',
+                'tw_word' => '輕鬆地走',
+                'hk_word' => '輕鬆地走',
+                'sg_word' => '輕鬆地走',
+                'pinyin'  => 'Qīngsōng de zǒu',
             ]
         ];
 
