@@ -18,9 +18,17 @@ class PartOfSpeechSeeder extends AbstractSeeder
                 'alias' => 'pron.',
                 'name'  => '代名詞',
             ],
-            'verb' => [
-                'alias' => 'v.',
-                'name'  => '動詞',
+            'transitiveVerb' => [
+                'alias' => 'vt.',
+                'name'  => '及物動詞',
+            ],
+            'intransitiveVerb' => [
+                'alias' => 'vi.',
+                'name'  => '不及物動詞',
+            ],
+            'auxiliaryVerb' => [
+                'alias' => 'aux.',
+                'name'  => '助動詞',
             ],
             'adjective' => [
                 'alias' => 'adj.',
@@ -41,6 +49,10 @@ class PartOfSpeechSeeder extends AbstractSeeder
             'interjection' => [
                 'alias' => 'int.',
                 'name'  => '感嘆詞',
+            ],
+            'phrase' => [
+                'alias' => 'ph.',
+                'name'  => '片語',
             ],
         ];
 
