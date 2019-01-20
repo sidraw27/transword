@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Entities\ZhVocabulary;
+use App\Repositories\Abstracts\AbstractVocabularyRepository;
 
 class ZhVocabularyRepository extends AbstractVocabularyRepository
 {

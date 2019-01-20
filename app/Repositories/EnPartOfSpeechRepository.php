@@ -3,11 +3,10 @@
 namespace App\Repositories;
 
 use App\Entities\EnPartOfSpeech;
+use App\Repositories\Abstracts\AbstractPartOfSpeechRepository;
 
-class EnPartOfSpeechRepository extends AbstractRepository
+class EnPartOfSpeechRepository extends AbstractPartOfSpeechRepository
 {
-    private $entity;
-
     /**
      * EnPartOfSpeechRepository constructor.
      * @param EnPartOfSpeech | \Illuminate\Database\Eloquent\Builder $entity

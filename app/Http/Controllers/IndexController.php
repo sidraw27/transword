@@ -24,8 +24,8 @@ class IndexController extends BaseController
         $locale  = $lang->getLocaleName();
         $service = $lang->getService();
 
-        $service->getPageData($word);
+        $pageData = $service->getPageData($word);
 
-        return view('translate');
+        return view('translate', compact('pageData'));
     }
 }

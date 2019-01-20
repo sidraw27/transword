@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
          $this->call(PartOfSpeechSeeder::class);
          $this->call(EnVocabularySeeder::class);
          $this->call(ZhVocabularySeeder::class);
+         $this->call(MappingSeeder::class);
     }
 }
