@@ -581,12 +581,14 @@
             </div>
             <div class="search-clear">
                 <amp-img src="/images/clear.svg" alt="" width="15" height="15"></amp-img>
-                <span>清除</span>
+                <span>
+                    {{ trans('translate.layout.clear') }}
+                </span>
             </div>
         </div>
         <div class="tl_search-hot">
             <div class="search-hot_tit">
-                {{ trans('translate.todayHot') }}
+                {{ trans('translate.layout.todayHot') }}
             </div>
             <a href="#">test</a>
             <a href="#">空氣污染</a>

@@ -89,7 +89,7 @@
             {{--<div class="tl_ad-wrap"></div>--}}
             {{--<div class="tl_hot-words">--}}
                 {{--<h3 class="tit18">--}}
-                    {{--{{ trans('translate.hotSearch') }}--}}
+                    {{--{{ trans('translate.layout.hotSearch') }}--}}
                 {{--</h3>--}}
                 {{--<ul class="hot-words_wrap">--}}
                     {{--<li>--}}

@@ -9,7 +9,9 @@
 <div class="tl_info-article">
     <ul class="tl_tabnav">
         <li class="active">
-            <h3 class="tl_font18">英文</h3>
+            <h3 class="tl_font18">
+                {{ trans('translate.layout.tab.en') }}
+            </h3>
         </li>
         {{--<li>--}}
         {{--<h3 class="tl_font18">日文</h3>--}}
