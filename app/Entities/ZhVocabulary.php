@@ -10,7 +10,7 @@ class ZhVocabulary extends Model
     // You should always use soft delete to protect your data
     use SoftDeletes;
 
-    public $timestamps = true;
+    public $timestamps = false;
 
     public function enMapping()
     {

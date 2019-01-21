@@ -20,9 +20,6 @@ class CreateEnVocabulariesTable extends Migration
             $table->string('part_of_speech');
             $table->string('kk_phonetic')->nullable();
             $table->string('dj_phonetic')->nullable();
-
-            $table->timestamps();
-            $table->softDeletes();
             // index
             $table->unique(['word', 'part_of_speech']);
             $table->foreign('part_of_speech')->references('type')->on('en_part_of_speech');

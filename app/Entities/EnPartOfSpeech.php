@@ -8,5 +8,5 @@ class EnPartOfSpeech extends Model
 {
     protected $table = 'en_part_of_speech';
 
-    public $timestamps = true;
+    public $timestamps = false;
 }

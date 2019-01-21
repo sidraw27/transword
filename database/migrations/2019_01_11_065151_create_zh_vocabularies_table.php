@@ -20,9 +20,7 @@ class CreateZhVocabulariesTable extends Migration
             $table->string('hk_word', 50)->nullable();
             $table->string('sg_word', 50)->nullable();
             $table->string('pinyin')->nullable();
-
-            $table->timestamps();
-            $table->softDeletes();
+            $table->string('zhuyin')->nullable();
             // index
             $table->unique([
                 'cn_word',

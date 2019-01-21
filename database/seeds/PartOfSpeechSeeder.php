@@ -14,6 +14,14 @@ class PartOfSpeechSeeder extends AbstractSeeder
                 'alias' => 'n.',
                 'name'  => '名詞',
             ],
+            'countableNoun' => [
+                'alias' => 'n.[C]',
+                'name'  => '名詞',
+            ],
+            'uncountableNoun' => [
+                'alias' => 'n.[U]',
+                'name'  => '名詞',
+            ],
             'pronoun' => [
                 'alias' => 'pron.',
                 'name'  => '代名詞',

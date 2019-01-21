@@ -16,8 +16,6 @@ class CreateEnPartOfSpeech extends Migration
             $table->string('type');
             $table->string('alias');
             $table->string('name');
-
-            $table->timestamps();
             // index
             $table->unique('type');
         });
