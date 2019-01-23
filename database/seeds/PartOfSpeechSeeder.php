@@ -10,6 +10,10 @@ class PartOfSpeechSeeder extends AbstractSeeder
     public function run()
     {
         $enPartOfSpeech = [
+            'subject' => [
+                'alias' => 's.',
+                'name'  => '主詞'
+            ],
             'noun' => [
                 'alias' => 'n.',
                 'name'  => '名詞',
@@ -62,6 +66,14 @@ class PartOfSpeechSeeder extends AbstractSeeder
                 'alias' => 'ph.',
                 'name'  => '片語',
             ],
+            'article' => [
+                'alias' => 'a.',
+                'name'  => '冠詞'
+            ],
+            'plural' => [
+                'alias' => 'pl.',
+                '複數'
+            ]
         ];
 
         $entity = \App::make(\App\Entities\EnPartOfSpeech::class);
