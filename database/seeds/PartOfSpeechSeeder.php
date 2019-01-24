@@ -72,7 +72,7 @@ class PartOfSpeechSeeder extends AbstractSeeder
             ],
             'plural' => [
                 'alias' => 'pl.',
-                '複數'
+                'name'  =>'複數'
             ]
         ];
 

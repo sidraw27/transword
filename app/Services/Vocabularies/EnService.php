@@ -2,6 +2,7 @@
 
 namespace App\Services\Vocabularies;
 
+use App\Elasticsearch\SentenceEs;
 use App\Repositories\EnPartOfSpeechRepository;
 use App\Repositories\EnVocabularyRepository;
 
@@ -9,11 +10,14 @@ class EnService extends AbstractVocabularyService
 {
     private $enVocabularyRepo;
     private $partOfSpeechRepo;
+    private $sentenceEs;
 
-    public function __construct(EnVocabularyRepository $enVocabularyRepo, EnPartOfSpeechRepository $enPartOfSpeechRepo)
+    public function __construct(EnVocabularyRepository $enVocabularyRepo, EnPartOfSpeechRepository $enPartOfSpeechRepo,
+                                SentenceEs $sentenceEs)
     {
         $this->enVocabularyRepo = $enVocabularyRepo;
         $this->partOfSpeechRepo = $enPartOfSpeechRepo;
+        $this->sentenceEs       = $sentenceEs;
     }
 
     /**
@@ -24,12 +28,18 @@ class EnService extends AbstractVocabularyService
      */
     public function getPageData(string $word, string $locale)
     {
-
         $enVocabularies = $this->enVocabularyRepo->getByWord($word);
         $transVocabularies = [];
         $vocabulary   = [
             'word' => $enVocabularies->first()->word
         ];
+
+        $sampleSentences = [];
+        $sentenceEs = $this->sentenceEs->searchByword($word);
+
+        foreach ($sentenceEs['hits'] as $sentence) {
+            $sampleSentences[] = $sentence['_source'];
+        }
 
         foreach ($enVocabularies as $enVocabulary) {
             if ( ! is_null($enVocabulary->part_of_speech)) {
@@ -50,6 +60,6 @@ class EnService extends AbstractVocabularyService
             }
         }
 
-        return compact('vocabulary', 'transVocabularies');
+        return compact('vocabulary', 'transVocabularies', 'sampleSentences');
     }
 }
