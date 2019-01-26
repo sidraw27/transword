@@ -30,9 +30,12 @@ class EnService extends AbstractVocabularyService
     {
         $enVocabularies = $this->enVocabularyRepo->getByWord($word);
         $transVocabularies = [];
+
         $vocabulary   = [
             'word' => $enVocabularies->first()->word
         ];
+
+        $partOfSpeechChange = $this->enVocabularyRepo->getPartOfSpeechChange($vocabulary['word']);
 
         $sampleSentences = [];
         $sentenceEs = $this->sentenceEs->searchByword($word);
@@ -42,9 +45,9 @@ class EnService extends AbstractVocabularyService
         }
 
         foreach ($enVocabularies as $enVocabulary) {
-            if ( ! is_null($enVocabulary->part_of_speech)) {
-                $partOfSpeech = $this->partOfSpeechRepo->getByType($enVocabulary->part_of_speech);
-            }
+            if (is_null($enVocabulary->part_of_speech)) continue;
+
+            $partOfSpeech = $this->partOfSpeechRepo->getByType($enVocabulary->part_of_speech);
             $alias = $partOfSpeech->alias ?? '-';
 
             try {
@@ -60,6 +63,6 @@ class EnService extends AbstractVocabularyService
             }
         }
 
-        return compact('vocabulary', 'transVocabularies', 'sampleSentences');
+        return compact('vocabulary', 'transVocabularies', 'sampleSentences', 'partOfSpeechChange');
     }
 }

@@ -42,5 +42,30 @@ class EnVocabularySeeder extends AbstractSeeder
         foreach ($words as $word) {
             $entity->create($word);
         }
+
+        $entity = \App::make(\App\Entities\EnVocabularyVerbTense::class);
+
+        $entity->create([
+            'word'               => 'swing',
+            'past_tense'         => 'swung',
+            'present_participle' => 'swung',
+            'past_participle'    => 'swinging'
+        ]);
+
+        $entity = \App::make(\App\Entities\EnVocabularyVerbTense::class);
+
+        $entity->create([
+            'word'               => 'swing',
+            'past_tense'         => 'swung',
+            'present_participle' => 'swung',
+            'past_participle'    => 'swinging'
+        ]);
+
+        $entity = \App::make(\App\Entities\EnVocabularyNounCountable::class);
+
+        $entity->create([
+            'word' => 'swing',
+            'countable_word' => 'swings'
+        ]);
     }
 }

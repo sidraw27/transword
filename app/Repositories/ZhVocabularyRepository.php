@@ -16,4 +16,11 @@ class ZhVocabularyRepository extends AbstractVocabularyRepository
         $this->entity = $entity;
         $this->setPrefix('CnVocabulary:');
     }
+
+    public function getByWord(string $word, string $column = 'word')
+    {
+        return $this->entity
+            ->where($column, $word)
+            ->get();
+    }
 }

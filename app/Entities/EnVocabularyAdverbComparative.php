@@ -2,11 +2,12 @@
 
 namespace App\Entities;
 
+use App\Enum\EnTableMapping;
 use Illuminate\Database\Eloquent\Model;
 
 class EnVocabularyAdverbComparative extends Model
 {
-    protected $table = 'en_vocabulary_adverb_comparative';
+    protected $table = EnTableMapping::ADVERB_COMPARATIVE;
 
     public $timestamps = false;
 }

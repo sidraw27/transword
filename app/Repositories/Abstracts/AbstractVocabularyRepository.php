@@ -4,12 +4,7 @@ namespace App\Repositories\Abstracts;
 
 abstract class AbstractVocabularyRepository extends AbstractRepository
 {
-    public function getByWord(string $word, string $column = 'word')
-    {
-        return $this->entity
-            ->where($column, $word)
-            ->get();
-    }
+    abstract public function getByWord(string $word);
 
     /**
      * @param int $id
@@ -17,7 +12,7 @@ abstract class AbstractVocabularyRepository extends AbstractRepository
      * @return mixed
      * @throws \Exception
      */
-    public function getTransVocabularies(int $id, string $lang)
+    public function getTransVocabularies(int $id, string $lang = 'zh')
     {
         $result = $this->entity->find($id);
 
