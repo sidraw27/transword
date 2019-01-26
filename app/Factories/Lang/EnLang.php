@@ -8,6 +8,11 @@ use App\Services\Vocabularies\EnService;
 
 class EnLang implements AbstractLang
 {
+    public function getDisplayName():string
+    {
+        return 'English';
+    }
+
     public function getRepository()
     {
         return \App::make(EnVocabularyRepository::class);

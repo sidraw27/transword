@@ -35,7 +35,40 @@ class EnService extends AbstractVocabularyService
             'word' => $enVocabularies->first()->word
         ];
 
-        $partOfSpeechChange = $this->enVocabularyRepo->getPartOfSpeechChange($vocabulary['word']);
+        $partOfSpeechChange = $this->enVocabularyRepo->getPartOfSpeechChange($vocabulary['word'])->toArray();
+        $tmpChange = [];
+        foreach ($partOfSpeechChange as $key => $change) {
+            if (is_null($change)) continue;
+            switch ($key) {
+                case 'past_tense':
+                    $tmpChange['動詞']['過去式'] = $change;
+                    break;
+                case 'present_participle':
+                    $tmpChange['動詞']['現在完成式'] = $change;
+                    break;
+                case 'past_participle':
+                    $tmpChange['動詞']['過去完成式'] = $change;
+                    break;
+                case 'countable_word':
+                    $tmpChange['名詞']['名詞複數'] = $change;
+                    break;
+                case 'adjective_comparative':
+                    $tmpChange['形容詞']['比較級'] = $change;
+                    break;
+                case 'adjective_superlative':
+                    $tmpChange['形容詞']['最高級'] = $change;
+                    break;
+                case 'adverb_comparative':
+                    $tmpChange['副詞']['比較級'] = $change;
+                    break;
+                case 'adverb_superlative':
+                    $tmpChange['副詞']['最高級'] = $change;
+                    break;
+                default:
+                    break;
+            }
+        }
+        $partOfSpeechChange = $tmpChange;
 
         $sampleSentences = [];
         $sentenceEs = $this->sentenceEs->searchByword($word);

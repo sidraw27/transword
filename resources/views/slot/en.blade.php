@@ -35,4 +35,16 @@
             </li>
         @endforeach
     </ul>
+    @foreach($pageData['partOfSpeechChange'] as $type => $partOfSpeechChange)
+        <ul @if($loop->first)class="tl_base-bt-bar"@endif>
+            @foreach($partOfSpeechChange as $name => $change)
+                <li class="bar-text">
+                    {{ $name }}：
+                    <span class="shape">
+                        {{ $change }}
+                    </span>
+                </li>
+            @endforeach
+        </ul>
+    @endforeach
 </div>

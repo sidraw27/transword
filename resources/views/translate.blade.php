@@ -22,21 +22,21 @@
                         </li>
                     </ul>
                     <ul class="tl_section-list">
-                            @foreach($pageData['sampleSentences'] as $sentence)
-                                <li class="tl_list-item">
-                                    <span class="number">
-                                        {{ $loop->index + 1 }}.
-                                    </span>
-                                    <div class="tl_item-text">
-                                        <p>
-                                            {{ $sentence['en'] }}
-                                        </p>
-                                        <p class="chiness">
-                                            {{ $sentence['zh'] }}
-                                        </p>
-                                    </div>
-                                </li>
-                            @endforeach
+                        @foreach($pageData['sampleSentences'] as $sentence)
+                            <li class="tl_list-item">
+                                <span class="number">
+                                    {{ $loop->index + 1 }}.
+                                </span>
+                                <div class="tl_item-text">
+                                    <p>
+                                        {{ $sentence['en'] }}
+                                    </p>
+                                    <p class="chiness">
+                                        {{ $sentence['zh'] }}
+                                    </p>
+                                </div>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             @endisset
@@ -64,7 +64,6 @@
                     {{--</li>--}}
                 {{--</ul>--}}
             {{--</div>--}}
-
         </div>
 
         <div class="tl_sidebar">

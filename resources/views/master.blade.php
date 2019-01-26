@@ -19,7 +19,6 @@
             ]
         }
 
-
     </script>
     <style amp-boilerplate="">body {
             -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -71,18 +70,18 @@
             to {
                 visibility: visible
             }
-        }
-    </style>
+        }</style>
     <noscript>
-        <style amp-boilerplate="">
-            body {
+        <style amp-boilerplate="">body {
                 -webkit-animation: none;
                 -moz-animation: none;
                 -ms-animation: none;
                 animation: none
-            }
-        </style>
+            }</style>
     </noscript>
+
+    <script async="" custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+    <script async="" custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
 
     <style amp-custom>
         * {
@@ -159,13 +158,16 @@
         a {
             text-decoration: none;
             color: #333333;
+            -webkit-transition: all .3s ease-in;
+            -o-transition: all .3s ease-in;
+            transition: all .3s ease-in;
         }
 
         input:focus, button:focus {
             outline: 0;
         }
 
-        .info_speak-btn {
+        amp-accordion, amp-accordion .current, .dropdown-item, .info_speak-btn {
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
@@ -177,7 +179,7 @@
             justify-content: center;
         }
 
-        .tl_topnav, .tl_search-box, .tl_search-box .search-clear {
+        .tl_topnav .logo, .tl_search-box, .tl_search-box .search-clear {
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
@@ -186,7 +188,7 @@
             align-items: center;
         }
 
-        .tl_info-article .tl_base-list .tl_list-item, .tl_section-list .tl_list-item {
+        .footer-con_upon, .tl_base-list .tl_list-item, .tl_section-list .tl_list-item {
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
@@ -195,7 +197,7 @@
             justify-content: space-between;
         }
 
-        .tl_container .tl_main-content .tl_info-box {
+        .tl_topnav, .tl_container .tl_main-content .tl_info-box {
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
@@ -218,7 +220,7 @@
             flex-wrap: wrap;
         }
 
-        .tl_search-hot {
+        .tl_search-hot, .tl_base-bt-bar {
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
@@ -240,7 +242,7 @@
             flex-wrap: wrap;
         }
 
-        .tl_synonym-list {
+        .dropdown-list, .footer_menu, .tl_synonym-list {
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
@@ -264,6 +266,12 @@
             font-size: 18px;
         }
 
+        @media screen and (max-width: 650px) {
+            .tl_font18 {
+                font-size: 14px;
+            }
+        }
+
         .tit18 {
             font-size: 18px;
             padding-bottom: 15px;
@@ -277,6 +285,7 @@
         }
 
         .tl_topnav {
+            position: relative;
             height: 70px;
         }
 
@@ -287,10 +296,133 @@
             }
         }
 
-        .tl_topnav a {
+        .tl_topnav .logo {
             color: #4F75A0;
             font-size: 20px;
             font-weight: bold;
+            height: 40px;
+        }
+
+        amp-accordion {
+            height: 40px;
+        }
+
+        amp-accordion .current-btn {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 0;
+        }
+
+        amp-accordion .current-btn:focus {
+            outline: 0;
+        }
+
+        amp-accordion .current {
+            width: 100%;
+            padding: 10px 25px;
+            font-size: 14px;
+        }
+
+        amp-accordion .current::after {
+            content: '';
+            background: url(/images/arrow-down.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-left: 10px;
+            width: 15px;
+            height: 15px;
+        }
+
+        .dropdown-list {
+            background: #ffffff;
+            z-index: 100;
+            -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-item {
+            padding: 15px 25px;
+            -webkit-transition: all .25s ease-in;
+            -o-transition: all .25s ease-in;
+            transition: all .25s ease-in;
+            cursor: pointer;
+        }
+
+        .dropdown-item:hover {
+            background: #f7f7f7;
+        }
+
+        .dropdown-item .item {
+            font-size: 14px;
+            color: #4f4f4f;
+            font-weight: 400;
+        }
+
+        .footer-outer {
+            background: #393939;
+            padding: 25px 0;
+        }
+
+        .footer_con {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media screen and (max-width: 800px) {
+            .footer_con {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+        }
+
+        .footer-con_upon {
+            padding: 5px 0 10px;
+        }
+
+        @media screen and (max-width: 400px) {
+            .footer-con_upon {
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+            }
+        }
+
+        .footer_logo {
+            color: #ffffff;
+            display: block;
+        }
+
+        @media screen and (max-width: 400px) {
+            .footer_logo {
+                width: 100%;
+                margin-bottom: 25px;
+            }
+        }
+
+        .footer_menu .tit {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .footer_menu .item {
+            font-size: 12px;
+            color: #C9C9C9;
+            padding: 5px 0;
+        }
+
+        .footer_menu .item:hover {
+            color: #ffffff;
+        }
+
+        .footer-con_bototm {
+            border-top: 1px solid #707070;
+            padding-top: 15px;
+        }
+
+        .footer-copyright {
+            color: #C9C9C9;
+            font-size: 12px;
         }
 
         .tl_search-outer {
@@ -451,34 +583,58 @@
             border-bottom: 4px solid #699BD5;
         }
 
+        @media screen and (max-width: 650px) {
+            .tl_info-article .tl_tabnav li {
+                padding: 0 10px 10px 10px;
+            }
+        }
+
         .tl_info-article .tl_tabnav li.active {
             color: #699BD5;
             border-bottom: 4px solid #699BD5;
             font-weight: bold;
         }
 
-        .tl_info-article .tl_base-list .tl_list-item {
+        .tl_base-list .tl_list-item {
             font-size: 18px;
             margin-bottom: 15px;
         }
 
-        .tl_info-article .tl_base-list .tl_list-item:last-child {
+        .tl_base-list .tl_list-item:last-child {
             margin-bottom: 0;
         }
 
-        .tl_info-article .tl_base-list .prop {
+        .tl_base-list .prop {
             color: #C76970;
             width: 50px;
             line-height: 25px;
             height: 25px;
         }
 
-        .tl_info-article .tl_base-list .tl_item-text {
+        .tl_base-list .tl_item-text {
             width: calc(100% - 50px);
         }
 
-        .tl_info-article .tl_base-list .tl_item-text span::after {
+        .tl_base-list .tl_item-text span::after {
             content: '；';
+        }
+
+        .tl_base-bt-bar {
+            margin-top: 30px;
+            border-top: 1px solid #eeeeee;
+            padding-top: 35px;
+        }
+
+        .bar-text {
+            margin-right: 20px;
+            margin-bottom: 15px;
+            font-size: 12px;
+            color: #828282;
+        }
+
+        .bar-text .shape {
+            color: #4f4f4f;
+            font-size: 14px;
         }
 
         .tl_section-list .tl_list-item {
@@ -566,7 +722,22 @@
 
 <div class="tl_topnav-outer">
     <div class="tl_topnav">
-        <a href="{{ route('index') }}">TRANSLATION</a>
+        <a class="logo" href="#">TransWord</a>
+        <amp-accordion class="sample">
+            <section>
+                <h4 class="current-btn">
+                    <span class="current">中文</span>
+                </h4>
+                <div class="dropdown-list">
+                    <div class="dropdown-item">
+                        <a class="item" href="#">
+                            中文
+                        </a>
+                    </div>
+                    <div class="dropdown-item"><a class="item" href="#">英文</a></div>
+                </div>
+            </section>
+        </amp-accordion>
     </div>
 </div>
 
@@ -590,10 +761,8 @@
             <div class="search-hot_tit">
                 {{ trans('translate.layout.todayHot') }}
             </div>
-            <a href="#">test</a>
             <a href="#">空氣污染</a>
             <a href="#">電暖爐</a>
-            <a href="#">test</a>
             <a href="#">空氣污染</a>
             <a href="#">電暖爐</a>
         </div>
