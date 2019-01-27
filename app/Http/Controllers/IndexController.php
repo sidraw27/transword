@@ -21,7 +21,7 @@ class IndexController extends BaseController
 
     public function vocabulary(string $word)
     {
-        if (preg_match( '/^[a-zA-Z]{2,30}$/', $word)) {
+        if (preg_match( '/^[a-zA-Z]{1,30}$/', $word)) {
             $lang = 'en';
         } elseif (preg_match('/^\p{Han}{1,30}$/u', $word)) {
             $lang = 'zh';
@@ -40,11 +40,7 @@ class IndexController extends BaseController
 
         $service = $langFactory->getService();
 
-        try {
-            $pageData = $service->getPageData($word, $this->locale);
-        } catch (\Exception $e) {
-            return redirect()->route('index');
-        }
+        $pageData = $service->getPageData($word, $this->locale);
 
         return view('translate', compact('lang', 'pageData'));
     }

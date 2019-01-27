@@ -43,44 +43,47 @@
     <div class="tl_container">
         <div class="tl_main-content">
 
-            @switch($lang)
-                @case('en')
+            @if (empty($pageData))
+                {{ trans('translate.not_found') }}
+            @else
+                @switch($lang)
+                    @case('en')
                     @include('slot.en')
-                @break
-                @case('zh')
+                    @break
+                    @case('zh')
                     @include('slot.zh')
-                @break
-            @endswitch
+                    @break
+                @endswitch
 
-            @isset($pageData['sampleSentences'])
-                <div class="tl_info-article">
-                    <ul class="tl_tabnav">
-                        <li>
-                            <h3 class="tl_font18">
-                                {{ trans('translate.sentence') }}
-                            </h3>
-                        </li>
-                    </ul>
-                    <ul class="tl_section-list">
-                        @foreach($pageData['sampleSentences'] as $sentence)
-                            <li class="tl_list-item">
+                @isset($pageData['sampleSentences'])
+                    <div class="tl_info-article">
+                        <ul class="tl_tabnav">
+                            <li>
+                                <h3 class="tl_font18">
+                                    {{ trans('translate.sentence') }}
+                                </h3>
+                            </li>
+                        </ul>
+                        <ul class="tl_section-list">
+                            @foreach($pageData['sampleSentences'] as $sentence)
+                                <li class="tl_list-item">
                                 <span class="number">
                                     {{ $loop->index + 1 }}.
                                 </span>
-                                <div class="tl_item-text">
-                                    <p>
-                                        {{ $sentence['en'] }}
-                                    </p>
-                                    <p class="chiness">
-                                        {{ $sentence['zh'] }}
-                                    </p>
-                                </div>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endisset
-
+                                    <div class="tl_item-text">
+                                        <p>
+                                            {{ $sentence['en'] }}
+                                        </p>
+                                        <p class="chiness">
+                                            {{ $sentence['zh'] }}
+                                        </p>
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endisset
+            @endif
 
                 {{--<div class="tl_info-article">--}}
                 {{--<ul class="tl_tabnav">--}}

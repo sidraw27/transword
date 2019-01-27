@@ -8,5 +8,6 @@ return [
     'tab' => [
         'en' => 'English',
         'zh' => 'Chinese'
-    ]
+    ],
+    'not_found' => 'Not Found'
 ];

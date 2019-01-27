@@ -22,6 +22,11 @@ class ZhService extends AbstractVocabularyService
     public function getPageData(string $word, string $locale)
     {
         $zhVocabulary = $this->zhVocabularyRepo->getByWord($word)->first();
+
+        if ($zhVocabulary->isEmpty()) {
+            return [];
+        }
+
         $vocabulary   = [
             'word' => $zhVocabulary['word'] ?? ''
         ];

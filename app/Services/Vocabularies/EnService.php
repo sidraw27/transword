@@ -29,6 +29,11 @@ class EnService extends AbstractVocabularyService
     public function getPageData(string $word, string $locale)
     {
         $enVocabularies = $this->enVocabularyRepo->getByWord($word);
+
+        if ($enVocabularies->isEmpty()) {
+            return [];
+        }
+
         $transVocabularies = [];
 
         $vocabulary   = [
