@@ -1,5 +1,9 @@
 @extends('master')
 
+@push('head')
+
+@endpush
+
 @section('content')
 <div class="tl_container-outer">
     <div class="tl_container">

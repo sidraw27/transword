@@ -16,7 +16,7 @@ class IndexController extends BaseController
 
     public function index()
     {
-        return view('translate');
+        return view('index');
     }
 
     public function vocabulary(string $lang, string $word)
