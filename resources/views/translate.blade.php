@@ -23,13 +23,13 @@
             <div class="search-clear">
                 <amp-img src="/images/clear.svg" alt="" width="15" height="15"></amp-img>
                 <span>
-                {{ trans('translate.layout.clear') }}
+                {{ trans('translate.clear') }}
             </span>
             </div>
         </div>
         <div class="tl_search-hot">
             <div class="search-hot_tit">
-                {{ trans('translate.layout.search_bar_under_word') }}
+                {{ trans('translate.search_bar_under_word') }}
             </div>
             <a href="#">空氣污染</a>
             <a href="#">電暖爐</a>
@@ -57,7 +57,7 @@
                     <ul class="tl_tabnav">
                         <li>
                             <h3 class="tl_font18">
-                                {{ trans('translate.layout.sentence') }}
+                                {{ trans('translate.sentence') }}
                             </h3>
                         </li>
                     </ul>
@@ -110,7 +110,7 @@
             <div class="tl_ad-wrap"></div>
             <div class="tl_hot-words">
                 <h3 class="tit18">
-                    {{ trans('translate.layout.hotSearch') }}
+                    {{ trans('translate.hotSearch') }}
                 </h3>
                 <ul class="hot-words_wrap">
                     <li>

@@ -10,7 +10,7 @@
     <ul class="tl_tabnav">
         <li class="active">
             <h3 class="tl_font18">
-                {{ trans('translate.layout.tab.en') }}
+                {{ trans('translate.tab.en') }}
             </h3>
         </li>
         {{--<li>--}}

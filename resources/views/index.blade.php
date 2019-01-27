@@ -11,8 +11,8 @@
 @section('content')
     <div class="main-outer">
         <div class="main_container">
-            <h1 class="con_tit">免費辭典翻譯</h1>
-            <div class="con_text">擁有30多萬個單詞、釋義和短句</div>
+            <h1 class="con_tit">{{ trans('index.title') }}</h1>
+            <div class="con_text">{{ trans('index.description') }}</div>
             <div class="tl_search-box">
                 <div class="search-icons">
                     <amp-img src="/images/search.svg" alt="" width="20" height="20"></amp-img>
@@ -26,7 +26,9 @@
                 </div>
             </div>
             <div class="tl_search-hot">
-                <div class="search-hot_tit">今日熱搜</div>
+                <div class="search-hot_tit">
+                    {{ trans('index.search_bar_under_word') }}
+                </div>
                 <a href="#">test</a><a href="#">空氣污染</a><a href="#">電暖爐</a><a href="#">test</a><a href="#">空氣污染</a><a
                         href="#">電暖爐</a>
             </div>
@@ -36,18 +38,23 @@
     </div>
     <div class="footer-outer">
         <div class="footer_con">
-            <div class="footer-con_upon"><a class="footer_logo" href="#">Transword</a>
+            <div class="footer-con_upon">
+                <a class="footer_logo" href="{{ route('index') }}">
+                    Transword
+                </a>
                 <div class="footer_menu">
-                    <div class="tit">Navigation</div>
-                    <a class="item" href="#">首頁</a><a class="item" href="#">聯絡我們</a>
+                    <div class="tit">{{ trans('index.navigation')  }}</div>
+                    <a class="item" href="{{ route('index') }}">{{ trans('index.index')  }}</a>
+                    <a class="item" href="#">{{ trans('index.contact_us') }}</a>
                 </div>
                 <div class="footer_menu">
-                    <div class="tit">語系切換</div>
-                    <a class="item" href="#">繁體中文</a><a class="item" href="#">English</a>
+                    <div class="tit">{{ trans('index.lang_switch') }}</div>
+                    <a class="item" href="https://tw.transword.cc">繁體中文</a>
+                    <a class="item" href="https://en.transword.cc">English</a>
                 </div>
             </div>
             <div class="footer-con_bototm">
-                <div class="footer-copyright">Copyright © {{ date('Y') }} transword.c</div>
+                <div class="footer-copyright">Copyright © {{ date('Y') }} transword.cc</div>
             </div>
         </div>
     </div>

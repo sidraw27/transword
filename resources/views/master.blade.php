@@ -22,15 +22,21 @@
         <amp-accordion class="sample">
             <section>
                 <h4 class="current-btn">
-                    <span class="current">中文</span>
+                    <span class="current">
+                        {{ trans('layout.language_family') }}
+                    </span>
                 </h4>
                 <div class="dropdown-list">
                     <div class="dropdown-item">
-                        <a class="item" href="#">
-                            中文
+                        <a class="item" href="https://tw.transword.cc">
+                            繁體版
                         </a>
                     </div>
-                    <div class="dropdown-item"><a class="item" href="#">英文</a></div>
+                    <div class="dropdown-item">
+                        <a class="item" href="https://en.transword.cc">
+                            English
+                        </a>
+                    </div>
                 </div>
             </section>
         </amp-accordion>
