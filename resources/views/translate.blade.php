@@ -1,7 +1,7 @@
 @extends('master')
 
 @push('head')
-    <title>transword</title>
+    <title>{{ $pageData['vocabulary']['word'] or '' }} - TransWord</title>
 
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>

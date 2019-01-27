@@ -1,6 +1,6 @@
 @extends('master')
 @push('head')
-    <title>transword</title>
+    <title>Huge Vocabularies - TransWord</title>
 
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
 
