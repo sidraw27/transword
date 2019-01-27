@@ -92,10 +92,10 @@
                 @endisset
             @endif
 
-                {{--<div class="tl_info-article">--}}
+            {{--<div class="tl_info-article">--}}
                 {{--<ul class="tl_tabnav">--}}
                     {{--<li>--}}
-                        {{--<h3 class="tl_font18">同義詞 </h3>--}}
+                        {{--<h3 class="tl_font18">同義詞</h3>--}}
                     {{--</li>--}}
                 {{--</ul>--}}
                 {{--<ul class="tl_synonym-list">--}}

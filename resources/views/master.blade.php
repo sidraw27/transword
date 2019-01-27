@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html ⚡ lang="zh-TW">
+<html ⚡ lang="{{ $htmlLang or 'en' }}">
 
 <head>
     <meta charset="utf-8">

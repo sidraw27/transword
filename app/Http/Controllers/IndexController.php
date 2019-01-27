@@ -12,6 +12,20 @@ class IndexController extends BaseController
     public function __construct()
     {
         $this->locale = \App::getLocale();
+
+        switch ($this->locale) {
+            case 'en':
+                $lang = 'en';
+                break;
+            case 'tw':
+                $lang = 'zh-TW';
+                break;
+            default:
+                $lang = 'en';
+                break;
+        }
+
+        \View::share('htmlLang', $lang);
     }
 
     public function index()
