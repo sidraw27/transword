@@ -22,7 +22,9 @@
                 <div class="tl_info-article">
                     <ul class="tl_tabnav">
                         <li>
-                            <h3 class="tl_font18">例句</h3>
+                            <h3 class="tl_font18">
+                                {{ trans('translate.layout.sentence') }}
+                            </h3>
                         </li>
                     </ul>
                     <ul class="tl_section-list">

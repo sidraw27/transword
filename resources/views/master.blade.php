@@ -62,7 +62,7 @@
         </div>
         <div class="tl_search-hot">
             <div class="search-hot_tit">
-                {{ trans('translate.layout.todayHot') }}
+                {{ trans('translate.layout.search_bar_under_word') }}
             </div>
             <a href="#">空氣污染</a>
             <a href="#">電暖爐</a>

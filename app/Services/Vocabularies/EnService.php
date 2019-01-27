@@ -41,28 +41,52 @@ class EnService extends AbstractVocabularyService
             if (is_null($change)) continue;
             switch ($key) {
                 case 'past_tense':
-                    $tmpChange['動詞']['過去式'] = $change;
+                    $tmpChange['v'][] = [
+                        'type'   => trans('part_of_speech.past_tense'),
+                        'change' => $change
+                    ];
                     break;
                 case 'present_participle':
-                    $tmpChange['動詞']['現在完成式'] = $change;
+                    $tmpChange['v'][] = [
+                        'type'   => trans('part_of_speech.present_participle'),
+                        'change' => $change
+                    ];
                     break;
                 case 'past_participle':
-                    $tmpChange['動詞']['過去完成式'] = $change;
+                    $tmpChange['v'][] = [
+                        'type'   => trans('part_of_speech.past_participle'),
+                        'change' => $change
+                    ];
                     break;
                 case 'countable_word':
-                    $tmpChange['名詞']['名詞複數'] = $change;
+                    $tmpChange['n'][] = [
+                        'type'   => trans('part_of_speech.countable_word'),
+                        'change' => $change
+                    ];
                     break;
                 case 'adjective_comparative':
-                    $tmpChange['形容詞']['比較級'] = $change;
+                    $tmpChange['adj'][] = [
+                        'type'   => trans('part_of_speech.adjective_comparative'),
+                        'change' => $change
+                    ];
                     break;
                 case 'adjective_superlative':
-                    $tmpChange['形容詞']['最高級'] = $change;
+                    $tmpChange['adj'][] = [
+                        'type'   => trans('part_of_speech.adjective_superlative'),
+                        'change' => $change
+                    ];
                     break;
                 case 'adverb_comparative':
-                    $tmpChange['副詞']['比較級'] = $change;
+                    $tmpChange['adv'][] = [
+                        'type'   => trans('part_of_speech.adverb_comparative'),
+                        'change' => $change
+                    ];
                     break;
                 case 'adverb_superlative':
-                    $tmpChange['副詞']['最高級'] = $change;
+                    $tmpChange['adv'][] = [
+                        'type'   => trans('part_of_speech.adverb_superlative'),
+                        'change' => $change
+                    ];
                     break;
                 default:
                     break;
