@@ -15,7 +15,7 @@ class CreateZhVocabulariesTable extends Migration
         Schema::create('zh_vocabularies', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('tw_word', 50);
+            $table->string('word', 50);
             $table->string('cn_word', 50)->nullable();
             $table->string('hk_word', 50)->nullable();
             $table->string('sg_word', 50)->nullable();
@@ -23,8 +23,8 @@ class CreateZhVocabulariesTable extends Migration
             $table->string('zhuyin')->nullable();
             // index
             $table->unique([
+                'word',
                 'cn_word',
-                'tw_word',
                 'hk_word',
                 'sg_word',
             ], 'unique_word');

@@ -112,7 +112,7 @@ class EnService extends AbstractVocabularyService
 
                 foreach ($zhVocabularies as $zhVocabulary) {
                     $transVocabularies[$alias][] = [
-                        'word' => $zhVocabulary['tw_word'] ?? ''
+                        'word' => $zhVocabulary['word'] ?? ''
                     ];
                 }
             } catch (\Exception $e) {
