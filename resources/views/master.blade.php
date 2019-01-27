@@ -8,6 +8,7 @@
     <script async="" src="https://cdn.ampproject.org/v0.js"></script>
     <title>transword</title>
 
+    <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
     <link rel="canonical" href="{{ URL::current() }}">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,viewport-fit=cover">

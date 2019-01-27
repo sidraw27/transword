@@ -46,5 +46,16 @@ class ZhVocabularySeeder extends AbstractSeeder
         foreach ($words as $word) {
             $entity->create($word);
         }
+
+        /** @var \Illuminate\Database\Eloquent\Builder $entity */
+        $entity = \App::make(\App\Entities\ZhSimilarVocabulary::class);
+        $entity->create([
+            'word' => '揮舞',
+            'group_hash' => md5('揮舞' . '擺動')
+        ]);
+        $entity->create([
+            'word' => '擺動',
+            'group_hash' => md5('揮舞' . '擺動')
+        ]);
     }
 }
