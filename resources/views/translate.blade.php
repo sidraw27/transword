@@ -13,6 +13,7 @@
 @section('content')
 <div class="tl_search-outer">
     <div class="tl_search">
+
         <div class="tl_search-box">
             <div class="search-icons">
                 <amp-img src="/images/search.svg" alt="" width="20" height="20"></amp-img>
@@ -27,6 +28,7 @@
             </span>
             </div>
         </div>
+
         <div class="tl_search-hot">
             <div class="search-hot_tit">
                 {{ trans('translate.search_bar_under_word') }}
