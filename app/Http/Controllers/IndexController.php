@@ -21,9 +21,9 @@ class IndexController extends BaseController
 
     public function vocabulary(string $word)
     {
-        if (preg_match( '/^[a-zA-Z]$/', $word, $ma)) {
+        if (preg_match( '/^[a-zA-Z]{2,30}$/', $word)) {
             $lang = 'en';
-        } elseif (preg_match('/^\p{Han}/u', $word)) {
+        } elseif (preg_match('/^\p{Han}{1,30}$/u', $word)) {
             $lang = 'zh';
         } else {
             return redirect()->route('index');
