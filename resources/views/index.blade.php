@@ -39,26 +39,4 @@
         <div class="main_shadow"></div>
         <div class="main_image"></div>
     </div>
-    <div class="footer-outer">
-        <div class="footer_con">
-            <div class="footer-con_upon">
-                <a class="footer_logo" href="{{ route('index') }}">
-                    Transword
-                </a>
-                <div class="footer_menu">
-                    <div class="tit">{{ trans('index.navigation')  }}</div>
-                    <a class="item" href="{{ route('index') }}">{{ trans('index.index')  }}</a>
-                    <a class="item" href="#">{{ trans('index.contact_us') }}</a>
-                </div>
-                <div class="footer_menu">
-                    <div class="tit">{{ trans('index.lang_switch') }}</div>
-                    <a class="item" href="https://tw.transword.cc">繁體中文</a>
-                    <a class="item" href="https://en.transword.cc">English</a>
-                </div>
-            </div>
-            <div class="footer-con_bototm">
-                <div class="footer-copyright">Copyright © {{ date('Y') }} transword.cc</div>
-            </div>
-        </div>
-    </div>
 @endsection
