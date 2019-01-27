@@ -19,8 +19,16 @@ class IndexController extends BaseController
         return view('index');
     }
 
-    public function vocabulary(string $lang, string $word)
+    public function vocabulary(string $word)
     {
+        if (preg_match( '/^[a-zA-Z]$/', $word, $ma)) {
+            $lang = 'en';
+        } elseif (preg_match('/^\p{Han}/u', $word)) {
+            $lang = 'zh';
+        } else {
+            return redirect()->route('index');
+        }
+
         $lang = strtolower($lang);
 
         try {
@@ -32,7 +40,11 @@ class IndexController extends BaseController
 
         $service = $langFactory->getService();
 
-        $pageData = $service->getPageData($word, $this->locale);
+        try {
+            $pageData = $service->getPageData($word, $this->locale);
+        } catch (\Exception $e) {
+            return redirect()->route('index');
+        }
 
         return view('translate', compact('lang', 'pageData'));
     }
