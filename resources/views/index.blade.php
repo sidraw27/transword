@@ -1,39 +1,14 @@
-<!DOCTYPE html>
-
-<html ⚡ lang="zh-TW">
-
-<head>
-    <meta charset="utf-8">
-    <script async="" src="https://cdn.ampproject.org/v0.js"></script>
+@extends('master')
+@push('head')
     <title>transword</title>
-
-    <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
-    <link rel="canonical" href="">
-
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,viewport-fit=cover">
 
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
 
     @include('css.index')
     @include('css.boilerplate')
-</head>
+@endpush
 
-<body>
-
-<div class="vh100-layout">
-    <div class="tl_topnav-outer">
-        <div class="tl_topnav"><a class="logo" href="#">TransWord</a>
-            <amp-accordion class="sample">
-                <section>
-                    <h4 class="current-btn"><span class="current"> 中文</span></h4>
-                    <div class="dropdown-list">
-                        <div class="dropdown-item"><a class="item" href="#">中文</a></div>
-                        <div class="dropdown-item"><a class="item" href="#">英文</a></div>
-                    </div>
-                </section>
-            </amp-accordion>
-        </div>
-    </div>
+@section('content')
     <div class="main-outer">
         <div class="main_container">
             <h1 class="con_tit">免費辭典翻譯</h1>
@@ -76,6 +51,4 @@
             </div>
         </div>
     </div>
-</div>
-</body>
-</html>
+@endsection
