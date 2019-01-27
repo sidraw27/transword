@@ -10,7 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::post('test', function() {
+    return redirect()->route('vocabulary', ['word' => 'test']);
+});
 Route::get('/', [
     'uses' => 'IndexController@index',
     'as'   => 'index'

@@ -5,6 +5,7 @@
 
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
 
     @include('css.boilerplate')
     @include('css.translate')
@@ -19,13 +20,17 @@
                 <amp-img src="/images/search.svg" alt="" width="20" height="20"></amp-img>
             </div>
             <div class="search-input">
-                <input type="text" autocomplete="" placeholder="">
+                <form id="searchForm" action="/" method="get">
+                    <input type="text" placeholder="{{ trans('translate.search_placeholder') }}" name="search">
+                </form>
             </div>
             <div class="search-clear">
-                <amp-img src="/images/clear.svg" alt="" width="15" height="15"></amp-img>
-                <span>
-                {{ trans('translate.clear') }}
-            </span>
+                <div on="tap:searchForm.clear">
+                    <amp-img src="/images/clear.svg" alt="" width="15" height="15"></amp-img>
+                    <span>
+                        {{ trans('translate.clear') }}
+                    </span>
+                </div>
             </div>
         </div>
 

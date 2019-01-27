@@ -18,7 +18,10 @@
                     <amp-img src="/images/search.svg" alt="" width="20" height="20"></amp-img>
                 </div>
                 <div class="search-input">
-                    <input type="text" autocomplete="" placeholder="">
+                    <form id="searchForm" action="/" method="get">
+                        {{--@csrf--}}
+                        <input type="text" placeholder="{{ trans('translate.search_placeholder') }}" name="search">
+                    </form>
                 </div>
                 <div class="search-clear">
                     <amp-img src="/images/clear.svg" alt="" width="15" height="15"></amp-img>

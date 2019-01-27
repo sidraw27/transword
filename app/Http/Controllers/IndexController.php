@@ -16,6 +16,12 @@ class IndexController extends BaseController
 
     public function index()
     {
+        $searchWord = \Request::get('search', null);
+
+        if ( ! is_null($searchWord)) {
+            return redirect()->route('vocabulary', ['word' => trim($searchWord)]);
+        }
+
         return view('index');
     }
 
